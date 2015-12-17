@@ -73,5 +73,5 @@ else
 fi
 eval $(docker-machine env $NAME)
 print "Starting registrator"
-docker run -d -v /var/run/docker.sock:/tmp/docker.sock -h registrator --name $NAME-registrator --net tldr-overlay $REGISTRY/registrator -internal consul://$NAME-consul:8500
+docker run -d -v "//var/run/docker.sock:/tmp/docker.sock" -h registrator --name $NAME-registrator --net tldr-overlay $REGISTRY/registrator -internal consul://$NAME-consul:8500
 print "Started a new node with IP \e[31m$(docker-machine ip $NAME)"
